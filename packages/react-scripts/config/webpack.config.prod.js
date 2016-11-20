@@ -11,7 +11,6 @@
 
 var path = require('path');
 var cssnext = require('postcss-cssnext');
-var postcssImport = require('postcss-import');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -193,7 +192,6 @@ module.exports = {
   // We use PostCSS for autoprefixing only.
   postcss: function() {
     return [
-      postcssImport(),
       cssnext({
         browsers: [
           '>1%',

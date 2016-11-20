@@ -11,7 +11,6 @@
 
 var path = require('path');
 var cssnext = require('postcss-cssnext');
-var postcssImport = require("postcss-import");
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
@@ -174,10 +173,6 @@ module.exports = {
   // We use PostCSS for cssnext
   postcss: function() {
     return [
-      postcssImport({
-        root: "./src/",
-        path: "./src/"
-      }),
       cssnext({
         browsers: [
           '>1%',
