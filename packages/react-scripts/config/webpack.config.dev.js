@@ -174,7 +174,9 @@ module.exports = {
   // We use PostCSS for cssnext
   postcss: function() {
     return [
-      postcssImport(),
+      postcssImport({
+        root: "./src"
+      }),
       cssnext({
         browsers: [
           '>1%',
