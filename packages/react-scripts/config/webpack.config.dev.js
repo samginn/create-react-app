@@ -10,7 +10,8 @@
 // @remove-on-eject-end
 
 var path = require('path');
-var autoprefixer = require('autoprefixer');
+var cssnext = require('postcss-cssnext');
+var postcssImport = require("postcss-import");
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
@@ -170,10 +171,11 @@ module.exports = {
     useEslintrc: false
   },
   // @remove-on-eject-end
-  // We use PostCSS for autoprefixing only.
+  // We use PostCSS for cssnext
   postcss: function() {
     return [
-      autoprefixer({
+      postcssImport(),
+      cssnext({
         browsers: [
           '>1%',
           'last 4 versions',
