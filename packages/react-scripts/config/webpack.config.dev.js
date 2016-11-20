@@ -174,11 +174,7 @@ module.exports = {
   // We use PostCSS for cssnext
   postcss: function() {
     return [
-      postcssImport({
-        root: path.join(__dirname, "./src"),
-        path: path.join(__dirname, "./src"),
-        addDependencyTo: webpack,
-      }),
+      postcssImport(),
       cssnext({
         browsers: [
           '>1%',
