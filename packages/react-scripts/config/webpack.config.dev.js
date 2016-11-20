@@ -175,7 +175,8 @@ module.exports = {
   postcss: function() {
     return [
       postcssImport({
-        root: "./src"
+        root: "./src/",
+        path: "./src/"
       }),
       cssnext({
         browsers: [
